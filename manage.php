@@ -76,7 +76,7 @@ if ($result && $result->num_rows > 0) {
     </style>
 </head>
 <body>
-    <a href="index.php"><button class="btn-back"><i class="fa fa-arrow-left"></i> Quay lại</button></a>
+    <a href="index.html"><button class="btn-back"><i class="fa fa-arrow-left"></i> Quay lại</button></a>
     <h2>Quản lý <?= ucfirst($table) ?></h2>
 
     <a href="form.php?table=<?= $table ?>"><button class="btn-add"><i class="fa fa-plus"></i> Thêm mới</button></a>
