@@ -10,20 +10,21 @@
 </head>
 
 
+''
 
 <body>
     <!-- Header -->
     <header>
-       <nav class="navbar">
-    <div class="logo">Bệnh viện Da Liễu</div>
-    <ul>
-        <li>Tin tức</li>
-        <li>Dịch vụ</li>
-        <li>Đội ngũ bác sĩ</li>
-        <li>Trang thiết bị</li>
-        <li class="login-item"><button class="btn-login">Đăng nhập</button></li>
-    </ul>
-</nav>
+        <nav class="navbar">
+            <div class="logo">Bệnh viện Da Liễu</div>
+            <ul>
+                <li>Tin tức</li>
+                <li>Dịch vụ</li>
+                <li>Đội ngũ bác sĩ</li>
+                <li>Trang thiết bị</li>
+                <li class="login-item"><button class="btn-login">Đăng nhập</button></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Banner & Search -->
@@ -31,11 +32,11 @@
         <h1>CHĂM SÓC & ĐIỀU TRỊ DA CHUYÊN SÂU</h1>
         <p>Nơi bạn tìm thấy sự tự tin từ làn da khỏe đẹp</p>
         <div class="search-bar">
-    <form action="search.php" method="get">
-        <input type="text" name="q" placeholder="Tìm bác sĩ, dịch vụ, hoặc thông tin..." required>
-        <button type="submit"><span>🔍</span></button>
-    </form>
-</div>
+            <form action="search.php" method="get">
+                <input type="text" name="q" placeholder="Tìm bác sĩ, dịch vụ, hoặc thông tin..." required>
+                <button type="submit"><span>🔍</span></button>
+            </form>
+        </div>
 
     </section>
 
@@ -76,30 +77,73 @@
     </section>
 
     <!-- Bác sĩ nổi bật -->
-    <section class="doctor-video">
+    <section class="doctor-featured">
         <div class="section-header">
-            <h2>Bác sĩ da liễu nổi bật</h2>
-            <a href="#" class="see-more">XEM THÊM</a>
+            <h2>Bác sĩ nổi bật </h2>
+            <button class="doctor-prev"><i class="fa fa-chevron-left"></i></button>
+            <button class="doctor-next"><i class="fa fa-chevron-right"></i></button>
         </div>
-        <div class="doctor-list">
-            <div class="doctor-card">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="BS. Nguyễn Thu Hà">
-                <div class="doctor-title">BS. Nguyễn Thu Hà - Chuyên gia trị nám</div>
-            </div>
-            <div class="doctor-card">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="BS. Trần Văn An">
-                <div class="doctor-title">BS. Trần Văn An - Điều trị mụn</div>
-            </div>
-            <div class="doctor-card">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="BS. Phạm Đức Hoàng">
-                <div class="doctor-title">BS. Phạm Đức Hoàng - Da liễu thẩm mỹ</div>
-            </div>
-            <div class="doctor-card">
-                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="BS. Lê Mai Anh">
-                <div class="doctor-title">BS. Lê Mai Anh - Trẻ hóa làn da</div>
-            </div>
+        <div class="doctor-carousel">
+            <a class="doctor-card" href="booking.php?doctor_id=bs1">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="PGS.TS. Nguyễn Thị Hoài An">
+                <div class="doctor-info">
+                    <strong>PGS.TS. Nguyễn Thị Hoài An</strong>
+                    <div>Tai Mũi Họng - Nhi khoa</div>
+                    <div class="doctor-bookings">35 lượt đặt tuần qua</div>
+                </div>
+            </a>
+            <a class="doctor-card" href="booking.php?doctor_id=bs2">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="GS.TS. Nguyễn Duy Hưng">
+                <div class="doctor-info">
+                    <strong>GS.TS. Nguyễn Duy Hưng</strong>
+                    <div>Da liễu</div>
+                    <div class="doctor-bookings">32 lượt đặt tuần qua</div>
+                </div>
+            </a>
+            <a class="doctor-card" href="booking.php?doctor_id=bs3">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="GS.TS. Đào Văn Long">
+                <div class="doctor-info">
+                    <strong>GS.TS. Đào Văn Long</strong>
+                    <div>Tiêu hóa - Viêm gan</div>
+                    <div class="doctor-bookings">26 lượt đặt tuần qua</div>
+                </div>
+            </a>
+            <!-- ... các bác sĩ khác ... -->
+        </div>
+        <!-- Thêm các bác sĩ khác nếu muốn -->
         </div>
     </section>
+
+    <!-- Đặt lịch khám với bác sĩ (ẩn/hiện bằng JS) -->
+    <div id="booking-modal" class="booking-modal" style="display:none;">
+        <div class="booking-content">
+            <button class="close-booking" onclick="closeBooking()">&times;</button>
+            <div class="booking-header">
+                <img id="booking-doctor-img" src="" alt="Bác sĩ">
+                <div>
+                    <h3 id="booking-doctor-name">Tên bác sĩ</h3>
+                    <div id="booking-doctor-specialty">Chuyên khoa</div>
+                </div>
+            </div>
+            <div class="booking-times">
+                <h4>Chọn khung giờ khám</h4>
+                <div class="time-slots">
+                    <button>07:30 - 08:00</button>
+                    <button>08:00 - 08:30</button>
+                    <button>09:00 - 09:30</button>
+                    <button>10:00 - 10:30</button>
+                    <button>16:30 - 17:00</button>
+                    <button>17:00 - 17:30</button>
+                    <!-- ... -->
+                </div>
+            </div>
+            <div class="booking-location">
+                <h4>Địa chỉ khám</h4>
+                <div id="booking-location">Bệnh viện Da liễu Chuyên khoa, 123 Đường ABC, Hà Nội</div>
+            </div>
+            <button class="btn-book">Đặt lịch</button>
+        </div>
+    </div>
 
     <!-- Chuyên khoa da liễu -->
     <section class="specialties">
@@ -109,15 +153,15 @@
         </div>
         <div class="specialty-list">
             <div class="specialty-card">
-                <img src="https://img.freepik.com/free-photo/beautiful-woman-getting-skin-treatment_23-2148825131.jpg" alt="Điều trị mụn">
+                <img src="20201208_mun-boc-mu-1.jpg" alt="Điều trị mụn">
                 <div class="specialty-title">Điều trị mụn</div>
             </div>
             <div class="specialty-card">
-                <img src="https://img.freepik.com/free-photo/woman-having-face-massage_1098-18626.jpg" alt="Trẻ hóa da">
+                <img src="7220fdeb525f5a5c6a2713394e60d7d7.webp" alt="Trẻ hóa da">
                 <div class="specialty-title">Trẻ hóa da</div>
             </div>
             <div class="specialty-card">
-                <img src="https://img.freepik.com/free-photo/female-patient-dermatologist_23-2149113842.jpg" alt="Điều trị nám">
+                <img src="Nam-da.jpg" alt="Điều trị nám">
                 <div class="specialty-title">Điều trị nám</div>
             </div>
             <div class="specialty-card">
@@ -176,36 +220,40 @@
             </div>
         </div>
 
+
+
         <!-- Chatbot AI Icon -->
-<div id="chatbot-ai-icon">
-    <img src="download.jpg" alt="Chatbot AI" />
-</div>
+        <div id="chatbot-ai-icon">
+            <img src="download.jpg" alt="Chatbot AI" />
+        </div>
     </section>
-<script>
-const chatbot = document.getElementById('chatbot-ai-icon');
-let isDragging = false, offsetX = 0, offsetY = 0;
+    <script>
+        const chatbot = document.getElementById('chatbot-ai-icon');
+        let isDragging = false,
+            offsetX = 0,
+            offsetY = 0;
 
-chatbot.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    offsetX = e.clientX - chatbot.getBoundingClientRect().left;
-    offsetY = e.clientY - chatbot.getBoundingClientRect().top;
-    chatbot.style.transition = 'none';
-});
+        chatbot.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - chatbot.getBoundingClientRect().left;
+            offsetY = e.clientY - chatbot.getBoundingClientRect().top;
+            chatbot.style.transition = 'none';
+        });
 
-document.addEventListener('mousemove', function(e) {
-    if (isDragging) {
-        chatbot.style.right = 'auto';
-        chatbot.style.left = (e.clientX - offsetX) + 'px';
-        chatbot.style.top = (e.clientY - offsetY) + 'px';
-        chatbot.style.bottom = 'auto';
-    }
-});
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                chatbot.style.right = 'auto';
+                chatbot.style.left = (e.clientX - offsetX) + 'px';
+                chatbot.style.top = (e.clientY - offsetY) + 'px';
+                chatbot.style.bottom = 'auto';
+            }
+        });
 
-document.addEventListener('mouseup', function() {
-    isDragging = false;
-    chatbot.style.transition = '';
-});
-</script>
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            chatbot.style.transition = '';
+        });
+    </script>
 </body>
 
 </html>
