@@ -1,0 +1,475 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d3a4b;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    font-size: 1em;
+    color: #2d3a4b;
+    cursor: pointer;
+    text-align: center;
+}
+
+.banner {
+    background: url('https://bookingcare.vn/assets/bookingcare-cover-4.jpg') center/cover no-repeat;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner h1 {
+    color: #222;
+    font-size: 2em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.7);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #b6b3a6;
+    border-radius: 30px;
+    padding: 6px 16px;
+    box-shadow: 0 2px 8px rgba(62, 68, 164, 0.08);
+    width: 400px;
+    max-width: 90vw;
+    margin-bottom: 40px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1em;
+    flex: 1;
+    padding: 10px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #333;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #fff;
+    padding: 30px 0;
+    margin-top: -30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.features div {
+    text-align: center;
+    font-size: 1.1em;
+    color: #2d3a4b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.features div:hover {
+    background: #f1f7ff;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #fff;
+    padding: 30px 0 20px 0;
+    margin-top: -30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.service {
+    text-align: center;
+    color: #2d3a4b;
+    font-size: 1em;
+    width: 110px;
+}
+
+.service i {
+    color: #00bfae;
+    margin-bottom: 8px;
+}
+
+.service div {
+    margin-top: 8px;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+/* Bác sĩ từ xa qua Video */
+.doctor-video {
+    background: #f8f9fa;
+    padding: 30px 0 10px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 10px auto;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    font-size: 1.3em;
+    color: #2d3a4b;
+    margin: 0;
+}
+
+.see-more {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.doctor-list {
+    display: flex;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px 20px 20px;
+    overflow-x: auto;
+}
+
+.doctor-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    width: 200px;
+    min-width: 180px;
+    text-align: center;
+    padding: 12px 8px 16px 8px;
+    flex-shrink: 0;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.doctor-title {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #222;
+}
+
+/* Chuyên khoa phổ biến */
+.specialties {
+    background: #fff;
+    padding: 30px 0 40px 0;
+}
+
+.specialty-list {
+    display: flex;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px 0 20px;
+    overflow-x: auto;
+}
+
+.specialty-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* =================== */
+/* Quản trị hệ thống  */
+/* =================== */
+.admin-panel {
+    padding: 40px 0;
+    background: #f9f9f9;
+    border-top: 2px solid #eee;
+}
+
+.admin-panel .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-panel .section-header h2 {
+    font-size: 1.5em;
+    color: #2d3a4b;
+    margin: 0 0 5px 0;
+}
+
+.admin-panel .section-header p {
+    color: #666;
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.admin-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.admin-card {
+    background: #fff;
+    padding: 24px 16px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.admin-card i {
+    margin-bottom: 12px;
+    color: #00bfae;
+}
+
+.admin-card div {
+    font-size: 1em;
+    color: #2d3a4b;
+    margin-bottom: 10px;
+}
+
+.admin-card small {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+.admin-card button {
+    margin-top: 6px;
+    padding: 8px 16px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.admin-card button:hover {
+    background: #0056b3;
+}
+#chatbot-ai-icon {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+#chatbot-ai-icon {
+    position: fixed;
+    bottom: 24px;
+    right: 24px; /* Đổi từ left sang right */
+    z-index: 9999;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+    user-select: none;
+}
+#chatbot-ai-icon:active {
+    cursor: grabbing;
+}
+#chatbot-ai-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 70px; /* Đảm bảo chiều cao đồng nhất */
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+.btn-login {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 32px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+.btn-login:hover {
+    background: #c0392b;
+}
+.doctor-featured {
+    background: #f7fafc;
+    padding: 32px 0;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.section-header h2 {
+    flex: 1;
+    font-size: 1.4em;
+    margin: 0;
+}
+.doctor-prev, .doctor-next {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.2s;
+}
+.doctor-prev:hover, .doctor-next:hover {
+    background: #e6f7ff;
+}
+.doctor-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+.doctor-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 18px 16px;
+    min-width: 220px;
+    max-width: 220px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.doctor-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    transform: translateY(-4px) scale(1.03);
+}
+.doctor-card img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #e6f7ff;
+}
+.doctor-info {
+    text-align: center;
+}
+.doctor-info strong {
+    font-size: 1.08em;
+    color: #2d3a4b;
+}
+.doctor-bookings {
+    color: #1abc9c;
+    font-size: 0.97em;
+    margin-top: 6px;
+}
+a, a:visited, a:active {
+    text-decoration: none;
+}
+/* Căn giữa hàng bác sĩ nổi bật với tiêu đề */
+.doctor-carousel {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding-bottom: 8px;
+}
+/* Ảnh dịch vụ nhỏ gọn, đồng đều */
+.specialty-card img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: block;
+    margin: 0 auto 10px auto;
+}
